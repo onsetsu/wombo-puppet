@@ -1,0 +1,27 @@
+{
+  "name": "wombo-puppet",
+  "version": "1.0.0",
+  "description": "Prevent RSI with automated clicks on Dream.ai's Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onsetsu/wombo-puppet.git"
+  },
+  "keywords": [
+    "puppeteer",
+    "image-gen"
+  ],
+  "type": "module",
+  "author": "onsetsu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/onsetsu/wombo-puppet/issues"
+  },
+  "homepage": "https://github.com/onsetsu/wombo-puppet#readme",
+  "dependencies": {
+    "puppeteer": "^20.7.4"
+  }
+}
