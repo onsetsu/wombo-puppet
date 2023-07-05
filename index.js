@@ -21,8 +21,11 @@ async function dismissModalWindow(page) {
     }
 }
 
-const browser = await puppeteer.launch({headless: false});
-
+const browser = await puppeteer.launch({
+    headless: false,
+    defaultViewport: null,
+    args: ['--start-maximized']
+});
 const page = await browser.newPage();
 await page.setViewport({width: 1080, height: 824});
 await page.goto('https://dream.ai/create');
@@ -122,7 +125,7 @@ try {
     if (error) {
         console.warn('ERROR [DATA URL]', error);
     } else {
-        await delay(1000);
+        await delay(5000);
         const img = await page.waitForSelector('#scrape-canvas', { timeout: 0 });
         await img.screenshot({
             path: 'logo-screenshot.jpg',
@@ -169,4 +172,8 @@ try {
 //     type: 'jpeg',
 // });
 await delay(1000);
-await browser.close();
+try {
+    await browser.close();
+} catch (error) {
+    console.warn('ERROR [BROWSER CLOSE]');
+}
